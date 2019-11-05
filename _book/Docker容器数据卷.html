@@ -1,0 +1,845 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Docker容器数据卷 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Docker容器数据卷.html" />
+    
+    
+    <link rel="prev" href="操作命令.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Docker安装.html">
+            
+                <a href="Docker安装.html">
+            
+                    
+                    docker安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="原理.html">
+            
+                <a href="原理.html">
+            
+                    
+                    原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="操作命令.html">
+            
+                <a href="操作命令.html">
+            
+                    
+                    操作命令
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="操作命令.html">
+            
+                <a href="操作命令.html#帮助命令">
+            
+                    
+                    帮助命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="操作命令.html">
+            
+                <a href="操作命令.html#镜像命令">
+            
+                    
+                    镜像命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="操作命令.html">
+            
+                <a href="操作命令.html#容器命令">
+            
+                    
+                    容器命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="操作命令.html">
+            
+                <a href="操作命令.html#重点">
+            
+                    
+                    重点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="操作命令.html">
+            
+                <a href="操作命令.html#Docker镜像commit操作案例">
+            
+                    
+                    Docker镜像commit操作案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="Docker容器数据卷.html">
+            
+                <a href="Docker容器数据卷.html">
+            
+                    
+                    Docker容器数据卷
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Docker容器数据卷.html">
+            
+                <a href="Docker容器数据卷.html#数据卷">
+            
+                    
+                    数据卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Docker容器数据卷.html">
+            
+                <a href="Docker容器数据卷.html#DockerFile添加">
+            
+                    
+                    DockerFile添加
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Docker容器数据卷.html">
+            
+                <a href="Docker容器数据卷.html#数据卷容器">
+            
+                    
+                    Docker容器数据卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="dockerFile.html">
+            
+                <a href="dockerFile.html">
+            
+                    
+                    DockerFile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="dockerFile.html">
+            
+                <a href="dockerFile.html#dockerfile关键字">
+            
+                    
+                    dockerfile关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="dockerFile.html">
+            
+                <a href="dockerFile.html#dockerfile 案例">
+            
+                    
+                    dockerfile 案例 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="本地镜像推送到阿里云.html">
+            
+                <a href="本地镜像推送到阿里云.html">
+            
+                    
+                    本地镜像推送到阿里云
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="本地镜像推送到阿里云.html">
+            
+                <a href="本地镜像推送到阿里云.html#登录阿里云Docker Registry">
+            
+                    
+                    登录阿里云Docker Registry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="本地镜像推送到阿里云.html">
+            
+                <a href="本地镜像推送到阿里云.html#登录阿里云Docker Registry">
+            
+                    
+                    从Registry中拉取镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="本地镜像推送到阿里云.html">
+            
+                <a href="本地镜像推送到阿里云.html#将镜像推送到Registry">
+            
+                    
+                    将镜像推送到Registry
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Docker容器数据卷</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="docker&#x5BB9;&#x5668;&#x6570;&#x636E;&#x5377;">Docker&#x5BB9;&#x5668;&#x6570;&#x636E;&#x5377;</h1>
+<h2 id="&#x6570;&#x636E;&#x5377;">&#x6570;&#x636E;&#x5377;</h2>
+<p>&#x7528;&#x4E8E;&#x5BB9;&#x5668;&#x548C;&#x4E3B;&#x673A;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF0C;&#x5BB9;&#x5668;&#x505C;&#x6B62;&#x9000;&#x51FA;&#x540E;&#xFF0C;&#x4E3B;&#x673A;&#x4FEE;&#x6539;&#x540E;&#x6570;&#x636E;&#x4F9D;&#x7136;&#x540C;&#x6B65;</p>
+<p>1&#x3001;&#x76F4;&#x63A5;&#x547D;&#x4EE4;&#x6DFB;&#x52A0;</p>
+<pre><code>1&#x3001;docker run -it -v /&#x5BBF;&#x4E3B;&#x673A;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x76EE;&#x5F55;:/&#x5BB9;&#x5668;&#x5185;&#x76EE;&#x5F55; &#x955C;&#x50CF;&#x540D;
+[root@hadoop101 atguigu]# docker run -it -v /dataVolume:/dataVolumeContainer centos:6.10
+
+&#x67E5;&#x770B;&#x6570;&#x636E;&#x5377;&#x662F;&#x5426;&#x6302;&#x8F7D;&#x6210;&#x529F;&#xFF0C;&#x770B;&#x6587;&#x4EF6;Volumes&#x548C;VolumesRW&#x952E;&#x503C;&#x5BF9;
+docker inspect &#x5BB9;&#x5668;ID
+
+[root@hadoop101 dataVolume]# docker inspect e3af9baffba2
+[
+{
+    &quot;Id&quot;: &quot;e3af9baffba204462a24071a41e964f7c276937c9f336914de1f92e012bb22b3&quot;,
+    &quot;Created&quot;: &quot;2019-10-31T07:27:30.6497512Z&quot;,
+    &quot;Path&quot;: &quot;/bin/bash&quot;,
+    &quot;Args&quot;: [],
+    &quot;State&quot;: {
+        &quot;Running&quot;: true,
+        &quot;Paused&quot;: false,
+        &quot;Restarting&quot;: false,
+        &quot;OOMKilled&quot;: false,
+        &quot;Dead&quot;: false,
+        &quot;Pid&quot;: 3430,
+        &quot;ExitCode&quot;: 0,
+        &quot;Error&quot;: &quot;&quot;,
+        &quot;StartedAt&quot;: &quot;2019-10-31T07:27:31.160761091Z&quot;,
+        &quot;FinishedAt&quot;: &quot;0001-01-01T00:00:00Z&quot;
+    },
+    &quot;Image&quot;: &quot;1a8b0bd60174176ba5db1623a003e065757429bae14d6d92f4d9c58c9f83f1cf&quot;,
+    &quot;NetworkSettings&quot;: {
+        &quot;Bridge&quot;: &quot;&quot;,
+        &quot;EndpointID&quot;: &quot;51b1e6fbfe462e30e6344ca5710845d597e06d88460d82f14b4cce32a75fdf1e&quot;,
+        &quot;Gateway&quot;: &quot;172.17.42.1&quot;,
+        &quot;GlobalIPv6Address&quot;: &quot;&quot;,
+        &quot;GlobalIPv6PrefixLen&quot;: 0,
+        &quot;HairpinMode&quot;: false,
+        &quot;IPAddress&quot;: &quot;172.17.0.1&quot;,
+        &quot;IPPrefixLen&quot;: 16,
+        &quot;IPv6Gateway&quot;: &quot;&quot;,
+        &quot;LinkLocalIPv6Address&quot;: &quot;&quot;,
+        &quot;LinkLocalIPv6PrefixLen&quot;: 0,
+        &quot;MacAddress&quot;: &quot;02:42:ac:11:00:01&quot;,
+        &quot;NetworkID&quot;: &quot;806457f2b6803f8f233e91885d248952a1f8b9f0d250c08e680e31426f2af372&quot;,
+        &quot;PortMapping&quot;: null,
+        &quot;Ports&quot;: {},
+        &quot;SandboxKey&quot;: &quot;/var/run/docker/netns/e3af9baffba2&quot;,
+        &quot;SecondaryIPAddresses&quot;: null,
+        &quot;SecondaryIPv6Addresses&quot;: null
+    },
+    &quot;ResolvConfPath&quot;: &quot;/var/lib/docker/containers/e3af9baffba204462a24071a41e964f7c276937c9f336914de1f92e012bb22b3/resolv.conf&quot;,
+    &quot;HostnamePath&quot;: &quot;/var/lib/docker/containers/e3af9baffba204462a24071a41e964f7c276937c9f336914de1f92e012bb22b3/hostname&quot;,
+    &quot;HostsPath&quot;: &quot;/var/lib/docker/containers/e3af9baffba204462a24071a41e964f7c276937c9f336914de1f92e012bb22b3/hosts&quot;,
+    &quot;LogPath&quot;: &quot;/var/lib/docker/containers/e3af9baffba204462a24071a41e964f7c276937c9f336914de1f92e012bb22b3/e3af9baffba204462a24071a41e964f7c276937c9f336914de1f92e012bb22b3-json.log&quot;,
+    &quot;Name&quot;: &quot;/trusting_bartik&quot;,
+    &quot;RestartCount&quot;: 0,
+    &quot;Driver&quot;: &quot;devicemapper&quot;,
+    &quot;ExecDriver&quot;: &quot;native-0.2&quot;,
+    &quot;MountLabel&quot;: &quot;&quot;,
+    &quot;ProcessLabel&quot;: &quot;&quot;,
+    &quot;Volumes&quot;: {
+        &quot;/dataVolumeContainer&quot;: &quot;/dataVolume&quot;
+    },
+    &quot;VolumesRW&quot;: {
+        &quot;/dataVolumeContainer&quot;: true
+    },
+    &quot;AppArmorProfile&quot;: &quot;&quot;,
+    &quot;ExecIDs&quot;: null,
+    &quot;HostConfig&quot;: {
+        &quot;Binds&quot;: [
+            &quot;/dataVolume:/dataVolumeContainer&quot;
+        ],
+        &quot;ContainerIDFile&quot;: &quot;&quot;,
+        &quot;LxcConf&quot;: [],
+        &quot;Memory&quot;: 0,
+        &quot;MemorySwap&quot;: 0,
+        &quot;CpuShares&quot;: 0,
+        &quot;CpuPeriod&quot;: 0,
+        &quot;CpusetCpus&quot;: &quot;&quot;,
+        &quot;CpusetMems&quot;: &quot;&quot;,
+        &quot;CpuQuota&quot;: 0,
+        &quot;BlkioWeight&quot;: 0,
+        &quot;OomKillDisable&quot;: false,
+        &quot;Privileged&quot;: false,
+        &quot;PortBindings&quot;: {},
+        &quot;Links&quot;: null,
+        &quot;PublishAllPorts&quot;: false,
+        &quot;Dns&quot;: null,
+        &quot;DnsSearch&quot;: null,
+        &quot;ExtraHosts&quot;: null,
+        &quot;VolumesFrom&quot;: null,
+        &quot;Devices&quot;: [],
+        &quot;NetworkMode&quot;: &quot;bridge&quot;,
+        &quot;IpcMode&quot;: &quot;&quot;,
+        &quot;PidMode&quot;: &quot;&quot;,
+        &quot;UTSMode&quot;: &quot;&quot;,
+        &quot;CapAdd&quot;: null,
+        &quot;CapDrop&quot;: null,
+        &quot;RestartPolicy&quot;: {
+            &quot;Name&quot;: &quot;no&quot;,
+            &quot;MaximumRetryCount&quot;: 0
+        },
+        &quot;SecurityOpt&quot;: null,
+        &quot;ReadonlyRootfs&quot;: false,
+        &quot;Ulimits&quot;: null,
+        &quot;LogConfig&quot;: {
+            &quot;Type&quot;: &quot;json-file&quot;,
+            &quot;Config&quot;: {}
+        },
+        &quot;CgroupParent&quot;: &quot;&quot;
+    },
+    &quot;Config&quot;: {
+        &quot;Hostname&quot;: &quot;e3af9baffba2&quot;,
+        &quot;Domainname&quot;: &quot;&quot;,
+        &quot;User&quot;: &quot;&quot;,
+        &quot;AttachStdin&quot;: true,
+        &quot;AttachStdout&quot;: true,
+        &quot;AttachStderr&quot;: true,
+        &quot;PortSpecs&quot;: null,
+        &quot;ExposedPorts&quot;: null,
+        &quot;Tty&quot;: true,
+        &quot;OpenStdin&quot;: true,
+        &quot;StdinOnce&quot;: true,
+        &quot;Env&quot;: [
+            &quot;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;
+        ],
+        &quot;Cmd&quot;: [
+            &quot;/bin/bash&quot;
+        ],
+        &quot;Image&quot;: &quot;centos:6.10&quot;,
+        &quot;Volumes&quot;: null,
+        &quot;VolumeDriver&quot;: &quot;&quot;,
+        &quot;WorkingDir&quot;: &quot;&quot;,
+        &quot;Entrypoint&quot;: null,
+        &quot;NetworkDisabled&quot;: false,
+        &quot;MacAddress&quot;: &quot;&quot;,
+        &quot;OnBuild&quot;: null,
+        &quot;Labels&quot;: {
+            &quot;org.label-schema.build-date&quot;: &quot;20180804&quot;,
+            &quot;org.label-schema.license&quot;: &quot;GPLv2&quot;,
+            &quot;org.label-schema.name&quot;: &quot;CentOS Base Image&quot;,
+            &quot;org.label-schema.schema-version&quot;: &quot;1.0&quot;,
+            &quot;org.label-schema.vendor&quot;: &quot;[root@hadoop101 dataVolume]# docker inspect 3406e937af82
+[
+{
+    &quot;Id&quot;: &quot;3406e937af82f1ebd1600d3ac3adcb473a26db9d47148d03a73b5fd55393a73e&quot;,
+    &quot;Created&quot;: &quot;2019-10-31T07:40:41.738486191Z&quot;,
+    &quot;Path&quot;: &quot;/bin/bash&quot;,
+    &quot;Args&quot;: [],
+    &quot;State&quot;: {
+        &quot;Running&quot;: true,
+        &quot;Paused&quot;: false,
+        &quot;Restarting&quot;: false,
+        &quot;OOMKilled&quot;: false,
+        &quot;Dead&quot;: false,
+        &quot;Pid&quot;: 3741,
+        &quot;ExitCode&quot;: 0,
+        &quot;Error&quot;: &quot;&quot;,
+        &quot;StartedAt&quot;: &quot;2019-10-31T07:40:42.09987451Z&quot;,
+        &quot;FinishedAt&quot;: &quot;0001-01-01T00:00:00Z&quot;
+    },
+    &quot;Image&quot;: &quot;1a8b0bd60174176ba5db1623a003e065757429bae14d6d92f4d9c58c9f83f1cf&quot;,
+    &quot;NetworkSettings&quot;: {
+        &quot;Bridge&quot;: &quot;&quot;,
+        &quot;EndpointID&quot;: &quot;328f9cb11793bc877302287f210435fba42c59aca2c3696796daa6b859c2946a&quot;,
+        &quot;Gateway&quot;: &quot;172.17.42.1&quot;,
+        &quot;GlobalIPv6Address&quot;: &quot;&quot;,
+        &quot;GlobalIPv6PrefixLen&quot;: 0,
+        &quot;HairpinMode&quot;: false,
+        &quot;IPAddress&quot;: &quot;172.17.0.2&quot;,
+        &quot;IPPrefixLen&quot;: 16,
+        &quot;IPv6Gateway&quot;: &quot;&quot;,
+        &quot;LinkLocalIPv6Address&quot;: &quot;&quot;,
+        &quot;LinkLocalIPv6PrefixLen&quot;: 0,
+        &quot;MacAddress&quot;: &quot;02:42:ac:11:00:02&quot;,
+        &quot;NetworkID&quot;: &quot;806457f2b6803f8f233e91885d248952a1f8b9f0d250c08e680e31426f2af372&quot;,
+        &quot;PortMapping&quot;: null,
+        &quot;Ports&quot;: {},
+        &quot;SandboxKey&quot;: &quot;/var/run/docker/netns/3406e937af82&quot;,
+        &quot;SecondaryIPAddresses&quot;: null,
+        &quot;SecondaryIPv6Addresses&quot;: null
+    },
+    &quot;ResolvConfPath&quot;: &quot;/var/lib/docker/containers/3406e937af82f1ebd1600d3ac3adcb473a26db9d47148d03a73b5fd55393a73e/resolv.conf&quot;,
+    &quot;HostnamePath&quot;: &quot;/var/lib/docker/containers/3406e937af82f1ebd1600d3ac3adcb473a26db9d47148d03a73b5fd55393a73e/hostname&quot;,
+    &quot;HostsPath&quot;: &quot;/var/lib/docker/containers/3406e937af82f1ebd1600d3ac3adcb473a26db9d47148d03a73b5fd55393a73e/hosts&quot;,
+    &quot;LogPath&quot;: &quot;/var/lib/docker/containers/3406e937af82f1ebd1600d3ac3adcb473a26db9d47148d03a73b5fd55393a73e/3406e937af82f1ebd1600d3ac3adcb473a26db9d47148d03a73b5fd55393a73e-json.log&quot;,
+    &quot;Name&quot;: &quot;/pensive_lovelace&quot;,
+    &quot;RestartCount&quot;: 0,
+    &quot;Driver&quot;: &quot;devicemapper&quot;,
+    &quot;ExecDriver&quot;: &quot;native-0.2&quot;,
+    &quot;MountLabel&quot;: &quot;&quot;,
+    &quot;ProcessLabel&quot;: &quot;&quot;,
+    &quot;Volumes&quot;: {
+        &quot;/dataVolumeContainer&quot;: &quot;/dataVolume&quot;
+    },
+    &quot;VolumesRW&quot;: {
+        &quot;/dataVolumeContainer&quot;: false
+    },
+    &quot;AppArmorProfile&quot;: &quot;&quot;,
+    &quot;ExecIDs&quot;: null,
+    &quot;HostConfig&quot;: {
+        &quot;Binds&quot;: [
+            &quot;/dataVolume:/dataVolumeContainer:ro&quot;
+        ],
+        &quot;ContainerIDFile&quot;: &quot;&quot;,
+        &quot;LxcConf&quot;: [],
+        &quot;Memory&quot;: 0,
+        &quot;MemorySwap&quot;: 0,
+        &quot;CpuShares&quot;: 0,
+        &quot;CpuPeriod&quot;: 0,
+        &quot;CpusetCpus&quot;: &quot;&quot;,
+        &quot;CpusetMems&quot;: &quot;&quot;,
+        &quot;CpuQuota&quot;: 0,
+        &quot;BlkioWeight&quot;: 0,
+        &quot;OomKillDisable&quot;: false,
+        &quot;Privileged&quot;: false,
+        &quot;PortBindings&quot;: {},
+        &quot;Links&quot;: null,
+        &quot;PublishAllPorts&quot;: false,
+        &quot;Dns&quot;: null,
+        &quot;DnsSearch&quot;: null,
+        &quot;ExtraHosts&quot;: null,
+        &quot;VolumesFrom&quot;: null,
+        &quot;Devices&quot;: [],
+        &quot;NetworkMode&quot;: &quot;bridge&quot;,
+        &quot;IpcMode&quot;: &quot;&quot;,
+        &quot;PidMode&quot;: &quot;&quot;,
+        &quot;UTSMode&quot;: &quot;&quot;,
+        &quot;CapAdd&quot;: null,
+        &quot;CapDrop&quot;: null,
+        &quot;RestartPolicy&quot;: {
+            &quot;Name&quot;: &quot;no&quot;,
+            &quot;MaximumRetryCount&quot;: 0
+        },
+        &quot;SecurityOpt&quot;: null,
+        &quot;ReadonlyRootfs&quot;: false,
+        &quot;Ulimits&quot;: null,
+        &quot;LogConfig&quot;: {
+            &quot;Type&quot;: &quot;json-file&quot;,
+            &quot;Config&quot;: {}
+        },
+        &quot;CgroupParent&quot;: &quot;&quot;
+    },
+    &quot;Config&quot;: {
+        &quot;Hostname&quot;: &quot;3406e937af82&quot;,
+        &quot;Domainname&quot;: &quot;&quot;,
+        &quot;User&quot;: &quot;&quot;,
+        &quot;AttachStdin&quot;: true,
+        &quot;AttachStdout&quot;: true,
+        &quot;AttachStderr&quot;: true,
+        &quot;PortSpecs&quot;: null,
+        &quot;ExposedPorts&quot;: null,
+        &quot;Tty&quot;: true,
+        &quot;OpenStdin&quot;: true,
+        &quot;StdinOnce&quot;: true,
+        &quot;Env&quot;: [
+            &quot;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;
+        ],
+        &quot;Cmd&quot;: [
+            &quot;/bin/bash&quot;
+        ],
+        &quot;Image&quot;: &quot;centos:6.10&quot;,
+        &quot;Volumes&quot;: null,
+        &quot;VolumeDriver&quot;: &quot;&quot;,
+        &quot;WorkingDir&quot;: &quot;&quot;,
+        &quot;Entrypoint&quot;: null,
+        &quot;NetworkDisabled&quot;: false,
+        &quot;MacAddress&quot;: &quot;&quot;,
+        &quot;OnBuild&quot;: null,
+        &quot;Labels&quot;: {
+            &quot;org.label-schema.build-date&quot;: &quot;20180804&quot;,
+            &quot;org.label-schema.license&quot;: &quot;GPLv2&quot;,
+            &quot;org.label-schema.name&quot;: &quot;CentOS Base Image&quot;,
+            &quot;org.label-schema.schema-version&quot;: &quot;1.0&quot;,
+            &quot;org.label-schema.vendor&quot;: &quot;CentOS&quot;
+        }
+    }
+}
+]
+&quot;
+        }
+    }
+}
+]
+2&#x3001;docker run -it -v /&#x5BBF;&#x4E3B;&#x673A;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x76EE;&#x5F55;:/&#x5BB9;&#x5668;&#x5185;&#x76EE;&#x5F55;:ro &#x955C;&#x50CF;&#x540D;
+</code></pre><h2 id="dockerfile&#x6DFB;&#x52A0;">DockerFile&#x6DFB;&#x52A0;</h2>
+<pre><code>1&#x3001;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x5EFA;mydocker&#x6587;&#x4EF6;&#x5939;&#x5E76;&#x8FDB;&#x5165;
+[root@hadoop101 /]# mkdir mydocker
+[root@hadoop101 /]# cd mydocker/
+2&#x3001;&#x7F16;&#x8F91;dockerfile&#x6587;&#x4EF6;
+[root@hadoop101 mydocker]# vim dockerfile
+
+&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF1A;
+# volume test
+
+FROM centos
+
+VOLUME [&quot;/dataVolumeContainer1&quot;,&quot;/dataVolumeContainer2&quot;]
+
+CMD echo &quot;finished,--------success1&quot;
+
+CMD /bin/bash
+
+&#x8BF4;&#x660E;&#xFF1A;
+&#x51FA;&#x4E8E;&#x53EF;&#x79FB;&#x690D;&#x548C;&#x5206;&#x4EAB;&#x7684;&#x8003;&#x8651;&#xFF0C;&#x7528;-v &#x4E3B;&#x673A;&#x76EE;&#x5F55;:&#x5BB9;&#x5668;&#x76EE;&#x5F55;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x4E0D;&#x80FD;&#x591F;&#x76F4;&#x63A5;&#x5728;Dockerfile&#x4E2D;&#x5B9E;&#x73B0;&#x3002;
+&#x7531;&#x4E8E;&#x5BBF;&#x4E3B;&#x673A;&#x76EE;&#x5F55;&#x662F;&#x4F9D;&#x8D56;&#x4E8E;&#x7279;&#x5B9A;&#x5BBF;&#x4E3B;&#x673A;&#x7684;&#xFF0C;&#x5E76;&#x4E0D;&#x80FD;&#x591F;&#x4FDD;&#x8BC1;&#x5728;&#x6240;&#x6709;&#x7684;&#x5BBF;&#x4E3B;&#x673A;&#x4E0A;&#x90FD;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x7279;&#x5B9A;&#x76EE;&#x5F55;&#x3002;
+
+3&#x3001;build&#x540E;&#x751F;&#x6210;&#x955C;&#x50CF;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x955C;&#x50CF;ykk/centos
+[root@hadoop101 mydocker]# docker build -f /mydocker/dockerfile -t ykk/centos .
+
+4&#x3001;run&#x5BB9;&#x5668;
+docker run -it *** /bin/bash
+
+&#x4E3B;&#x673A;&#x548C;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x5377;&#x76EE;&#x5F55;&#x5730;&#x5740;&#x5BF9;&#x5E94;&#x8DEF;&#x5F84;
+docker inspect &#x5BB9;&#x5668;ID
+
+&#x6CE8;&#xFF1A;
+Docker&#x6302;&#x8F7D;&#x4E3B;&#x673A;&#x76EE;&#x5F55;Docker&#x8BBF;&#x95EE;&#x51FA;&#x73B0;cannot open directory .: Permission denied
+&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;&#x5728;&#x6302;&#x8F7D;&#x76EE;&#x5F55;&#x540E;&#x591A;&#x52A0;&#x4E00;&#x4E2A;--privileged=true&#x53C2;&#x6570;&#x5373;&#x53EF;
+</code></pre><h2 id="&#x6570;&#x636E;&#x5377;&#x5BB9;&#x5668;">&#x6570;&#x636E;&#x5377;&#x5BB9;&#x5668;</h2>
+<p>&#x547D;&#x540D;&#x7684;&#x5BB9;&#x5668;&#x6302;&#x8F7D;&#x6570;&#x636E;&#x5377;&#xFF0C;&#x5176;&#x5B83;&#x5BB9;&#x5668;&#x901A;&#x8FC7;&#x6302;&#x8F7D;&#x8FD9;&#x4E2A;(&#x7236;&#x5BB9;&#x5668;)&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF0C;&#x6302;&#x8F7D;&#x6570;&#x636E;&#x5377;&#x7684;&#x5BB9;&#x5668;&#xFF0C;&#x79F0;&#x4E4B;&#x4E3A;&#x6570;&#x636E;&#x5377;&#x5BB9;&#x5668;</p>
+<p>&#x6848;&#x4F8B;&#x63CF;&#x8FF0;&#xFF1A;</p>
+<pre><code>&#x4EE5;ykk/centos&#x4E3A;&#x6A21;&#x677F;&#x5E76;&#x8FD0;&#x884C;&#x5BB9;&#x5668;dc01/dc02/dc03,&#x5B83;&#x4EEC;&#x5DF2;&#x7ECF;&#x5177;&#x6709;&#x5BB9;&#x5668;/dataVolumeContainer1&#x548C;/dataVolumeContainer2
+</code></pre><ol>
+<li>&#x5148;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x7236;&#x5BB9;&#x5668;,&#x5E76;&#x5728;/dataVolumeContainer2&#x91CC;&#x8FB9;&#x91CD;&#x5EFA;dc01.txt</li>
+</ol>
+<pre><code>[root@hadoop101 mydocker]# docker run -it --name dc01 ykk/centos
+</code></pre><ol>
+<li>dc02/dc03&#x7EE7;&#x627F;&#x81EA;dc1    --volumes-from</li>
+</ol>
+<pre><code>[root@hadoop101 mydocker]# docker run -it --name dc02 --volumes-from dc01 ykk/centos
+[root@hadoop101 mydocker]# docker run -it --name dc03 --volumes-from dc01 ykk/cento
+
+dc02 dc03 &#x90FD;&#x7EE7;&#x627F;&#x4E86;dc01&#x7684;&#x6587;&#x4EF6;
+</code></pre><ol>
+<li><p>&#x56DE;&#x5230;dc01 &#x53EF;&#x4EE5;&#x770B;&#x5230;02/03&#x5404;&#x81EA;&#x7684;&#x6DFB;&#x52A0;&#x90FD;&#x80FD;&#x5171;&#x4EAB;&#xFF0C;&#x6BD4;&#x5982;&#x5728;02&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#xFF0C;03&#x673A;&#x5668;&#x4E0A;&#x4E5F;&#x80FD;&#x5171;&#x4EAB;</p>
+</li>
+<li><p>&#x5220;&#x9664;01&#xFF0C;02&#x4FEE;&#x6539;&#x6587;&#x4EF6;03&#x4E5F;&#x80FD;&#x540C;&#x6837;&#x8BBF;&#x95EE;(&#x867D;&#x7136;02 03&#x5404;&#x81EA;&#x7EE7;&#x627F;01)</p>
+</li>
+<li>&#x7ED3;&#x8BBA;&#xFF1A;&#x5BB9;&#x5668;&#x4E4B;&#x95F4;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x7684;&#x4F20;&#x9012;&#xFF0C;&#x6570;&#x636E;&#x5377;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E00;&#x76F4;&#x6301;&#x7EED;&#x5230;&#x6CA1;&#x6709;&#x5BB9;&#x5668;&#x4F7F;&#x7528;&#x5B83;&#x4E3A;&#x6B62;</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="操作命令.html#Docker镜像commit操作案例" class="navigation navigation-prev " aria-label="Previous page: Docker镜像commit操作案例">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Docker容器数据卷.html#数据卷" class="navigation navigation-next " aria-label="Next page: 数据卷">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Docker容器数据卷","level":"1.5","depth":1,"next":{"title":"数据卷","level":"1.5.1","depth":2,"anchor":"#数据卷","path":"Docker容器数据卷.md","ref":"Docker容器数据卷.md#数据卷","articles":[]},"previous":{"title":"Docker镜像commit操作案例","level":"1.4.5","depth":2,"anchor":"#Docker镜像commit操作案例","path":"操作命令.md","ref":"操作命令.md#Docker镜像commit操作案例","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Docker容器数据卷.md","mtime":"2019-11-05T03:10:00.353Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-05T03:43:24.424Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
